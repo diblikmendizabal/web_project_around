@@ -1,7 +1,5 @@
 # Tripleten web_project_homeland
 
-Proyecto 8 - Logica y metodos de programacion en JavaScript
-
 El objetivo de este proyecto es implementar y optimizar la lógica de programación en JavaScript para gestionar dinámicamente tarjetas de contenido, permitiendo su creación, eliminación y la interacción con botones de like y dislike.
 
 En este proyecto, se adquirieron conocimientos sobre el manejo de Arrays para almacenar tarjetas, Funciones para modularizar el código y Manipulación del DOM para actualizar la interfaz de usuario en tiempo real.
@@ -18,6 +16,8 @@ En este proyecto, se adquirieron conocimientos sobre el manejo de Arrays para al
 - **Arrays** para almacenar y gestionar las tarjetas de contenido.
 - **Funciones** para agregar, eliminar y dar like o dislike a las tarjetas.
 - **Manipulación del DOM** para actualizar la lista de tarjetas en tiempo real.
+- **Manejo de objetos en JS** para representar las tarjetas de contenido con sus propiedades.
+- **Manejo de eventos en JS** para validar todos los formularios.
 
 ## Autor
 
