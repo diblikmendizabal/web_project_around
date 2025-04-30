@@ -13,75 +13,72 @@
   <body>
     <div class="page">
       <header class="header">
-        <img class="header__logo" src="./images/header.png" alt="logo"/>
+        <img src="./images/logo.png" alt="Logo del proyecto" class="header__logo"/>
       </header>
-      <main class="content">
-        <section class="profile">
-          <div class="profile__content">
-            <div class="profile__info">
-              <div class="profile__avatar">
-                <img src="./images/photo-profile.png" alt="avatar" class="profile__content-avatar-image"/>
-              </div>
-              <div class="profile__details">
-                <h1 class="profile__details-name">Jacques Cousteau</h1>
-                <p class="profile__details-description">Explorador</p>
-              </div>
-              <button class="profile__info-button"></button>
-            </div>
+      <section class="profile">
+        <img class="profile__avatar" src="./images/Avatar.jpg" alt="Avatar de Jacques Cousteau"/>
+        <div class="profile__content">
+          <div class="profile__info">
+            <p class="profile__name">Jacques Cousteau</p>
+            <p class="profile__hobbie">Explorador</p>
           </div>
-          <button class="profile__info-button-add"></button>
-        </section>
-        <section class="gallery"></section>
-        <section class="popup">
-          <div class="popup__container">
-            <h2 class="popup__form-title">Editar Perfil</h2>
-            <form class="popup__form">
-              <input class="popup__form-name" type="text" id="name" name="name" placeholder="Nombre" minlength="2" maxlength="40" required/>
-              <span class="popup__form-name-message validation-message hidden-message">Por favor, rellene este campo</span>
->              <input class="popup__form-occupation" type="text" id="occupation" name="occupation" placeholder="Acerca de mi" minlength="2" maxlength="200" required>
-              <span class="popup__form-occupation-message validation-message hidden-message">Por favor, rellene este campo</span>
-              <button type="submit" disabled class="popup__form-button">Guardar</button>
-            </form>
-          </div>
-          <div class="popup__button-close"></div>
-        </section>
-        <section class="popup popup-add">
-          <div class="popup__container">
-            <h2 class="popup__form-title">Nuevo Lugar</h2>
-            <form class="popup-add__form">
-              <input class="popup-add__form-name" type="text" id="name" name="name" placeholder="Título" minlength="2" maxlength="40" required/>
-              <span class="popup-add__form-name-message validation-message hidden-message" >Por favor, rellene este campo</span>
-              <input class="popup-add__form-occupation" type="url" id="occupation" name="occupation" placeholder="Enlace a la imagen" required/>
-              <span class="popup-add__form-occupation-message validation-message hidden-message">URL no válida</span>
-              <button type="submit" class="popup-add__form-button" disabled>Guardar</button>
-            </form>
-          </div>
-          <div class="popup-add__button-close"></div>
-        </section>
-        <div class="popup popup-image">
-          <div class="popup-image__container">
-            <div class="popup-image__button-close"></div>
-            <img class="popup__img" src="" alt="" />
-            <div class="popup__container-text">
-              <p class="popup__text"></p>
-            </div>
-          </div>
+          <button class="profile__edit-button" aria-label="Editar perfil">
+            <img src="./images/Edit-Button.png" alt="Botón para editar perfil"/>
+          </button>
         </div>
+        <button class="profile__add-button" aria-label="Agregar nueva imagen">
+          <img src="./images/Add-Button.png" alt="Botón para agregar nueva imagen"/>
+        </button>
+      </section>
+      <main class="main">
+        <div class="elements__container"></div>
+        <template class="template__card" id="template__card">
+          <div class="element">
+            <button class="element__photo-trash"></button>
+            <img src="" alt="" class="element__photo-link" />
+            <div class="element__info">
+              <h2 class="element__photo-name"></h2>
+              <button class="element__photo-like"></button>
+            </div>
+          </div>
+        </template>
       </main>
-      <footer class="footer">
-        <p class="footer__copyright">© 2024 Alrededor de los EE.UU</p>
-      </footer>
-    </div>
-    <template class="gallery__template" id="template">
-      <div class="gallery__card">
-        <img class="gallery__card-image" src="" alt="" />
-        <button type="button" class="gallery__card-delete"></button>
-        <div class="gallery__card-text">
-          <p class="gallery__card-name"></p>
-          <img class="gallery__card-like" src="images/like.svg" />
+      <div class="popup" id="popup-show-card">
+        <div class="popup popup__overlay"></div>
+        <div class="popup__photo-content">
+          <img class="popup__close-card" src="images/Close Icon.png" alt="boton para cerrar" id="popup-close-card" required/>
+          <img src=" " alt="" class="popup__photo-link" />
+          <h3 class="popup__photo-name"></h3>
         </div>
       </div>
-    </template>
+      <div class="popup" id="popup-add-card">
+        <div class="form popup__overlay"></div>
+        <form class="form popup__form" id="form-addCard" novalidate>
+          <img class="form__close-button form__close-button-addCard" src="images/Close Icon.png" alt="boton para cerrar" id="close-form" required/>
+          <h2 class="form__title">Nuevo Lugar</h2>
+          <input  class="form__input" type="text" id="input-card-name" placeholder="Titulo" minlength="2" maxlength="30" required />
+          <span class="input-error input-card-name-error"></span>
+          <input class="form__input" type="url" id="input-card-link" placeholder="Enlace a la imagen" required/>
+          <span class="input-error input-card-link-error"></span>
+          <button type="submit" class="form__submit" disabled>Crear</button>
+        </form>
+      </div>
+      <div class="popup" id="popup-profile">
+        <div class="form popup__overlay"></div>
+        <form class="form popup__form" id="form-profile" novalidate>
+          <img class="form__close-button form__close-button-profile" src="images/Close Icon.png" alt="boton para cerrar" id="close-form"/>
+          <h2 class="form__title">Editar perfil</h2>
+          <input type="text" class="form__input" id="input-name" name="name" placeholder="Nombre" minlength="2" required/>
+          <span class="input-error input-name-error"></span>
+          <input type="text" class="form__input" id="input-hobbie" name="hobbie" placeholder="Acerca de mí" minlength="2" maxlength="200" required/>
+          <span class="input-error input-hobbie-error"></span>
+          <button type="submit" class="form__submit" disabled>Guardar</button>
+        </form>
+      </div>
+      <footer class="footer">
+        <p class="footer__copyright">&#169 2024 Alrededor de los EE.UU</p>
+      </footer>
+    </div>
     <script src="./scripts/index.js" defer></script>
     <script src="./scripts/validate.js" defer></script>
   </body>
