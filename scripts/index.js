@@ -15,7 +15,6 @@ const inputName = document.querySelector("#input-name");
 const inputHobbie = document.querySelector("#input-hobbie");
 const formProfile = document.querySelector("#form-profile");
 const closeButton = document.querySelector(".form__close-button-profile");
-
 const cardContainer = document.querySelector(".elements__container");
 const popupAddCard = document.querySelector("#popup-add-card");
 const formAddCard = document.querySelector("#form-addCard");
@@ -25,11 +24,9 @@ const inputLink = document.querySelector("#input-card-link");
 const closeAddCardButton = document.querySelector(
   ".form__close-button-addCard"
 );
-const createButton = document.querySelector(".form__submit"); //botón de crear y guardar
-
+const createButton = document.querySelector(".form__submit");
 const popupCardImage = document.querySelector("#popup-show-card");
 const popupCardClose = document.querySelector(".popup__close-card");
-
 const initialCards = [
   {
     name: "Valle de Yosemite",
@@ -57,7 +54,6 @@ const initialCards = [
   },
 ];
 
-
 const config = {
   formSelector: ".form",
   inputSelector: ".form__input",
@@ -66,7 +62,6 @@ const config = {
   inputErrorClass: "form__input_type_error",
   errorClass: "form__input-error_active",
 };
-
 
 const profileFormValidator = new FormValidator(config, formProfile);
 profileFormValidator.enableValidation();

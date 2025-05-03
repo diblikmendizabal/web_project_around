@@ -1,4 +1,4 @@
-# Tripleten web_project_homeland
+# Tripleten web_project_around
 
 El objetivo de este proyecto es implementar y optimizar la lógica de programación en JavaScript para gestionar dinámicamente tarjetas de contenido, permitiendo su creación, eliminación y la interacción con botones de like y dislike.
 
