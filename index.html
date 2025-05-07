@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alrededor de los EE.UU</title>
+    <title>Project around</title>
     <meta name="author" content="Diblik Mendizábal" />
     <meta name="description" content="Project around" />
-    <meta name="keywords" content="Turismo, Fotografía, Redes Sociales"/>
+    <name name="keywords" content="Turismo, Fotografía, Redes Sociales" />
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="stylesheet" href="./pages/index.css" />
   </head>
@@ -27,7 +27,7 @@
           </button>
         </div>
         <button class="profile__add-button" aria-label="Agregar nueva imagen">
-          <img src="./images/Add-Button.png" alt="Botón para agregar nueva imagen"/>
+          <img src="./images/Add-Button.png" alt="Botón para agregar nueva imagen" />
         </button>
       </section>
       <main class="main">
@@ -44,7 +44,7 @@
         </template>
       </main>
       <footer class="footer">
-        <p class="footer__copyright">&#169 2024 Diblik Mendizábal</p>
+        <p class="footer__copyright">&#169 2025 Diblik Mendizábal</p>
       </footer>
     </div>
     <div class="popup" id="popup-show-card">
@@ -58,7 +58,7 @@
     <div class="popup" id="popup-add-card">
       <div class="form popup__overlay"></div>
       <form class="form popup__form" id="form-addCard" novalidate>
-        <img class="form__close-button form__close-button-addCard" src="images/Close Icon.png" alt="Boton para cerrar" id="close-form"/>
+        <img class="form__close-button form__close-button-addCard" src="images/Close Icon.png" alt="boton para cerrar" id="close-form" required/>
         <h2 class="form__title">Nuevo Lugar</h2>
         <input class="form__input" type="text" id="input-card-name" placeholder="Titulo" minlength="2" maxlength="30" required/>
         <span class="input-error input-card-name-error"></span>
@@ -79,7 +79,6 @@
         <button type="submit" class="form__submit" disabled>Guardar</button>
       </form>
     </div>
-    <script src="./scripts/validate.js" type="module"></script>
-    <script src="./scripts/index.js" type="module"></script>
+    <script src="./pages/index.js" type="module"></script>
   </body>
 </html>

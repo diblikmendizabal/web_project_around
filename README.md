@@ -18,11 +18,10 @@ En este proyecto, se adquirieron conocimientos sobre el manejo de Arrays para al
 - **Manipulación del DOM** para actualizar la lista de tarjetas en tiempo real.
 - **Manejo de objetos en JS** para representar las tarjetas de contenido con sus propiedades.
 - **Manejo de eventos en JS** para validar todos los formularios.
-- **Programación Orientada a Objetos** para facilitar la organización y reutilización.
-
+- **Programación Orientada a Objetos** para facilitar la organización y reutilización del cógido.
 
 ## Autor
 
-**Diblik  Mendizábal**
+**Diblik Mendizábal**
 
 https://diblikmedizabal.github.io/web_project_around/
