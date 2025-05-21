@@ -15,10 +15,10 @@ export const closeImageModal = modalImage.querySelector('.popupimg__content-clos
 export const titleImageModal = modalImage.querySelector('.popupimg__content-title');
 
 export const galeryItems = [
-    { title: "Valle de Yosemite", link: "image/place_1.jpg" },
-    { title: "Lago Louise", link: "image/place_2.png" },
-    { title: "Montañas Calvas", link: "image/place_3.png" },
-    { title: "Latemar", link: "image/place_4.png" },
-    { title: "Vanoise National Park", link: "image/place_5.png" },
-    { title: "Lago di Braies", link: "image/place_6.png" },
+    { title: "Valle de Yosemite", link: "image/Lugar 1.png" },
+    { title: "Lago Louise", link: "image/Lugar 2.png" },
+    { title: "Montañas Calvas", link: "image/Lugar 3.png" },
+    { title: "Latemar", link: "image/Lugar 4.png" },
+    { title: "Vanoise National Park", link: "image/Lugar 5.png" },
+    { title: "Lago di Braies", link: "image/Lugar 6.png" },
 ];

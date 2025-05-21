@@ -1,9 +1,9 @@
-import { Card } from '../components/card.js';
-import { FormValidator } from '../components/formValidator.js';
-import { PopupWithForm } from '../components/PopupWithForm.js';
-import { PopupWithImage } from '../components/PopupWithImage.js';
-import { UserInfo } from '../components/UserInfo.js';
-import Section from '../components/Section.js';
+import { Card } from '../scripts/card.js';
+import { FormValidator } from '../scripts/formValidator.js';
+import { PopupWithForm } from '../scripts/PopupWithForm.js';
+import { PopupWithImage } from '../scripts/PopupWithImage.js';
+import { UserInfo } from '../scripts/UserInfo.js';
+import Section from '../scripts/Section.js';
 import {
     galeryItems,
     editButton,
