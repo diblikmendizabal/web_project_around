@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,21 +13,35 @@
   <body>
     <div class="page">
       <header class="header">
-        <img src="./images/logo.png" alt="Logo del proyecto" class="header__logo"/>
+        <img
+          src="./images/logo.png"
+          alt="Logo del proyecto"
+          class="header__logo"
+        />
       </header>
       <section class="profile">
-        <img class="profile__avatar" src="./images/Avatar.jpg" alt="Avatar de Jacques Cousteau"/>
+        <img
+          class="profile__avatar"
+          src="./images/Avatar.jpg"
+          alt="Avatar de Jacques Cousteau"
+        />
         <div class="profile__content">
           <div class="profile__info">
             <p class="profile__name">Jacques Cousteau</p>
             <p class="profile__hobbie">Explorador</p>
           </div>
           <button class="profile__edit-button" aria-label="Editar perfil">
-            <img src="./images/Edit-Button.png" alt="Botón para editar perfil"/>
+            <img
+              src="./images/Edit-Button.png"
+              alt="Botón para editar perfil"
+            />
           </button>
         </div>
         <button class="profile__add-button" aria-label="Agregar nueva imagen">
-          <img src="./images/Add-Button.png" alt="Botón para agregar nueva imagen" />
+          <img
+            src="./images/Add-Button.png"
+            alt="Botón para agregar nueva imagen"
+          />
         </button>
       </section>
       <main class="main">
@@ -44,13 +58,19 @@
         </template>
       </main>
       <footer class="footer">
-        <p class="footer__copyright">&#169 2025 Diblik Mendizábal</p>
+        <p class="footer__copyright">&#169; 2025 Diblik Mendizábal</p>
       </footer>
     </div>
     <div class="popup" id="popup-show-card">
       <div class="popup popup__overlay"></div>
       <div class="popup__photo-content">
-        <img class="popup__close-card" src="images/Close Icon.png" alt="boton para cerrar" id="popup-close-card" required/>
+        <img
+          class="popup__close-card"
+          src="images/Close Icon.png"
+          alt="boton para cerrar"
+          id="popup-close-card"
+          required
+        />
         <img src=" " alt="" class="popup__photo-link" />
         <h3 class="popup__photo-name"></h3>
       </div>
@@ -58,11 +78,31 @@
     <div class="popup" id="popup-add-card">
       <div class="form popup__overlay"></div>
       <form class="form popup__form" id="form-addCard" novalidate>
-        <img class="form__close-button form__close-button-addCard" src="images/Close Icon.png" alt="boton para cerrar" id="close-form" required/>
+        <img
+          class="form__close-button form__close-button-addCard"
+          src="images/Close Icon.png"
+          alt="boton para cerrar"
+          id="close-form"
+          required
+        />
         <h2 class="form__title">Nuevo Lugar</h2>
-        <input class="form__input" type="text" id="input-card-name" placeholder="Titulo" minlength="2" maxlength="30" required/>
+        <input
+          class="form__input"
+          type="text"
+          id="input-card-name"
+          placeholder="Titulo"
+          minlength="2"
+          maxlength="30"
+          required
+        />
         <span class="input-error input-card-name-error"></span>
-        <input class="form__input" type="url" id="input-card-link" placeholder="Enlace a la imagen" required/>
+        <input
+          class="form__input"
+          type="url"
+          id="input-card-link"
+          placeholder="Enlace a la imagen"
+          required
+        />
         <span class="input-error input-card-link-error"></span>
         <button type="submit" class="form__submit" disabled>Crear</button>
       </form>
@@ -70,11 +110,34 @@
     <div class="popup" id="popup-profile">
       <div class="form popup__overlay"></div>
       <form class="form popup__form" id="form-profile" novalidate>
-        <img class="form__close-button form__close-button-profile" src="images/Close Icon.png" alt="boton para cerrar" id="close-form"/>
+        <img
+          class="form__close-button form__close-button-profile"
+          src="images/Close Icon.png"
+          alt="boton para cerrar"
+          id="close-form"
+        />
         <h2 class="form__title">Editar perfil</h2>
-        <input type="text" class="form__input" id="input-name" name="name" placeholder="Nombre" minlength="2" maxlength="40" required/>
+        <input
+          type="text"
+          class="form__input"
+          id="input-name"
+          name="name"
+          placeholder="Nombre"
+          minlength="2"
+          maxlength="40"
+          required
+        />
         <span class="input-error input-name-error"></span>
-        <input type="text" class="form__input" id="input-hobbie" name="hobbie" placeholder="Acerca de mí" minlength="2" maxlength="200" required/>
+        <input
+          type="text"
+          class="form__input"
+          id="input-hobbie"
+          name="hobbie"
+          placeholder="Acerca de mí"
+          minlength="2"
+          maxlength="200"
+          required
+        />
         <span class="input-error input-hobbie-error"></span>
         <button type="submit" class="form__submit" disabled>Guardar</button>
       </form>

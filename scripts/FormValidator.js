@@ -1,7 +1,8 @@
 export class FormValidator {
-  constructor(config, formElement) {
-    this._config = config;
-    this._formElement = formElement;
+  constructor(fromSelector) {
+    this._form = document.querySelector(fromSelector);
+    this._inputList = Array.from(this._form.querySelectorAll(".modal__input"));
+    this._buttonElement = this._form.querySelector(".form__submit");
   }
 
   _showInputError(inputElement, errorMessage) {
@@ -47,9 +48,6 @@ export class FormValidator {
   }
 
   _setEventListeners() {
-    const inputList = Array.from(
-      this._formElement.querySelectorAll(this._config.inputSelector)
-    );
     const buttonElement = this._formElement.querySelector(
       this._config.submitButtonSelector
     );

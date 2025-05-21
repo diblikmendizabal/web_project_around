@@ -1,11 +1,8 @@
-import { Card } from "../scripts/Card.js";
-import { FormValidator } from "../scripts/FormValidator.js";
-import {
-  openPopup,
-  closePopup,
-  closePopupOnEscape,
-  submitOnEnter,
-} from "../scripts/utils.js";
+import { Card } from "../components/card.js";
+import { FormValidator } from "../components/formValidator.js";
+import { PopupWithForm } from "../components/PopupWithForm.js";
+import { UserInfo } from "../components/UserInfo.js";
+import { editButton, addButton } from "../constants/constants.js";
 
 const popupProfile = document.querySelector("#popup-profile");
 const profileButton = document.querySelector(".profile__edit-button");
@@ -166,3 +163,21 @@ inputCardName.addEventListener("keydown", (evt) =>
   submitOnEnter(evt, formAddCard)
 );
 inputLink.addEventListener("keydown", (evt) => submitOnEnter(evt, formAddCard));
+
+const userInfo = new UserInfo({
+  nameSelector: "#name",
+  descriptionSelector: "#description",
+});
+
+const popupEditForm = new PopupWithForm(".modal", ({ nombre, descripcion }) => {
+  userInfo.setUserInfo({ name: nombre, description: descripcion });
+});
+
+popupEditForm.setEventListeners();
+
+editButton.addEventListener("click", () => {
+  const { name, about } = userInfo.getUserInfo();
+  document.querySelector("#nombre").value = name;
+  document.querySelector("#descripcion").value = about;
+  popupEditForm.open();
+});

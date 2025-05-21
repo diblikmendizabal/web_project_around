@@ -16,15 +16,15 @@ export class Card {
   }
 
   _setEventListeners(cardElement) {
-    const btnLike = cardElement.querySelector(".element__photo-like");
-    const btnDelete = cardElement.querySelector(".element__photo-trash");
+    const buttonLike = cardElement.querySelector(".element__photo-like");
+    const buttonDelete = cardElement.querySelector(".element__photo-trash");
     const cardImage = cardElement.querySelector(".element__photo-link");
 
-    btnLike.addEventListener("click", () => {
-      btnLike.classList.toggle("element__photo-like_active");
+    buttonLike.addEventListener("click", () => {
+      buttonLike.classList.toggle("element__photo-like_active");
     });
 
-    btnDelete.addEventListener("click", () => {
+    buttonDelete.addEventListener("click", () => {
       cardElement.remove();
     });
 
