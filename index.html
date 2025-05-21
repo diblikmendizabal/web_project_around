@@ -1,147 +1,147 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project around</title>
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta
+      name="description"
+      content="Prototipo de Red Social donde en el perfil se podrán subir fotos y recibir me gusta de otros usuarios."
+    />
     <meta name="author" content="Diblik Mendizábal" />
-    <meta name="description" content="Project around" />
-    <name name="keywords" content="Turismo, Fotografía, Redes Sociales" />
-    <link rel="shortcut icon" href="favicon.ico" />
     <link rel="stylesheet" href="./pages/index.css" />
+    <link rel="icon" href="./image/icon.ico" type="image/x-icon" />
+    <title>around the US</title>
   </head>
   <body>
     <div class="page">
       <header class="header">
-        <img
-          src="./images/logo.png"
-          alt="Logo del proyecto"
-          class="header__logo"
-        />
+        <h1 class="header__title header__title_word">
+          <img src="./image/header.svg" alt="" />
+        </h1>
       </header>
-      <section class="profile">
-        <img
-          class="profile__avatar"
-          src="./images/Avatar.jpg"
-          alt="Avatar de Jacques Cousteau"
-        />
-        <div class="profile__content">
-          <div class="profile__info">
-            <p class="profile__name">Jacques Cousteau</p>
-            <p class="profile__hobbie">Explorador</p>
-          </div>
-          <button class="profile__edit-button" aria-label="Editar perfil">
-            <img
-              src="./images/Edit-Button.png"
-              alt="Botón para editar perfil"
-            />
-          </button>
-        </div>
-        <button class="profile__add-button" aria-label="Agregar nueva imagen">
+      <main class="content">
+        <section class="profile">
           <img
-            src="./images/Add-Button.png"
-            alt="Botón para agregar nueva imagen"
+            src="./image/perfil_image.jpg"
+            alt="profile of a men"
+            class="profile__image"
           />
-        </button>
-      </section>
-      <main class="main">
-        <div class="elements__container"></div>
-        <template class="template__card" id="template__card">
-          <div class="element">
-            <button class="element__photo-trash"></button>
-            <img src="" alt="" class="element__photo-link" />
-            <div class="element__info">
-              <h2 class="element__photo-name"></h2>
-              <button class="element__photo-like"></button>
+          <div class="profile__info">
+            <ul class="profile__info-list">
+              <li>
+                <h1 class="profile__info-name" id="name">Jacques Cousteau</h1>
+              </li>
+              <li>
+                <p class="profile__info-description" id="description">
+                  Explorador
+                </p>
+              </li>
+            </ul>
+
+            <button class="profile__edit-button" type="button">.</button>
+          </div>
+          <button class="profile__add-button" type="button">.</button>
+        </section>
+        <div id="modal-edit-all">
+          <div class="modal hidden">
+            <div class="modal__content">
+              <button class="close popup__close" type="button"></button>
+              <h2 class="modal__content_header">Editar perfil</h2>
+              <form class="modal__form form" novalidate>
+                <input
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  placeholder="Nombre"
+                  class="modal__form_name modal__input"
+                  minlength="2"
+                  maxlength="40"
+                  required
+                />
+                <span class="nombre-error modal__error"></span>
+                <input
+                  type="text"
+                  id="descripcion"
+                  name="descripcion"
+                  placeholder="Acerca de mí"
+                  class="modal__form_description modal__input"
+                  minlength="2"
+                  maxlength="200"
+                  required
+                />
+                <span class="descripcion-error modal__error"></span>
+                <button
+                  type="submit"
+                  class="modal__content_button form__submit"
+                >
+                  Guardar
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div id="modal__add-all" class="modal__add-all">
+          <div class="modal__add hidden modal">
+            <div class="modal__add-content">
+              <button class="close__add popup__close" type="button"></button>
+              <h2 class="modal__add-content-header">Nuevo Lugar</h2>
+              <form class="modal__add-form form" novalidate>
+                <input
+                  type="text"
+                  id="nombreAdd"
+                  name="title"
+                  placeholder="Titulo"
+                  class="modal__add-form-name modal__input"
+                  minlength="2"
+                  maxlength="30"
+                  required
+                />
+                <span class="nombreAdd-error modal__error"></span>
+                <input
+                  type="url"
+                  id="imageAdd"
+                  name="link"
+                  placeholder="Enlace a la imagen"
+                  class="modal__add-form-description modal__input"
+                  required
+                />
+                <span class="imageAdd-error modal__error"></span>
+                <button
+                  type="submit"
+                  class="modal__add-content-button form__submit"
+                >
+                  Crear
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <template id="galery">
+          <div class="galery__item">
+            <img src="" alt="landscape image" class="galery__item-image" />
+            <button class="galery__item-delete-button"></button>
+            <div class="galery__item-content">
+              <p class="galery__item-name"></p>
+              <button class="galery__item-like-button"></button>
             </div>
           </div>
         </template>
+
+        <div id="galery__content"></div>
+
+        <div id="popupimg" class="popupimg hidden">
+          <div class="popupimg__content">
+            <button class="popupimg__content-close popup__close"></button>
+            <img src="" alt="imagen ampliada" class="popupimg__content-image" />
+            <p class="popupimg__content-title"></p>
+          </div>
+        </div>
       </main>
-      <footer class="footer">
-        <p class="footer__copyright">&#169; 2025 Diblik Mendizábal</p>
-      </footer>
     </div>
-    <div class="popup" id="popup-show-card">
-      <div class="popup popup__overlay"></div>
-      <div class="popup__photo-content">
-        <img
-          class="popup__close-card"
-          src="images/Close Icon.png"
-          alt="boton para cerrar"
-          id="popup-close-card"
-          required
-        />
-        <img src=" " alt="" class="popup__photo-link" />
-        <h3 class="popup__photo-name"></h3>
-      </div>
-    </div>
-    <div class="popup" id="popup-add-card">
-      <div class="form popup__overlay"></div>
-      <form class="form popup__form" id="form-addCard" novalidate>
-        <img
-          class="form__close-button form__close-button-addCard"
-          src="images/Close Icon.png"
-          alt="boton para cerrar"
-          id="close-form"
-          required
-        />
-        <h2 class="form__title">Nuevo Lugar</h2>
-        <input
-          class="form__input"
-          type="text"
-          id="input-card-name"
-          placeholder="Titulo"
-          minlength="2"
-          maxlength="30"
-          required
-        />
-        <span class="input-error input-card-name-error"></span>
-        <input
-          class="form__input"
-          type="url"
-          id="input-card-link"
-          placeholder="Enlace a la imagen"
-          required
-        />
-        <span class="input-error input-card-link-error"></span>
-        <button type="submit" class="form__submit" disabled>Crear</button>
-      </form>
-    </div>
-    <div class="popup" id="popup-profile">
-      <div class="form popup__overlay"></div>
-      <form class="form popup__form" id="form-profile" novalidate>
-        <img
-          class="form__close-button form__close-button-profile"
-          src="images/Close Icon.png"
-          alt="boton para cerrar"
-          id="close-form"
-        />
-        <h2 class="form__title">Editar perfil</h2>
-        <input
-          type="text"
-          class="form__input"
-          id="input-name"
-          name="name"
-          placeholder="Nombre"
-          minlength="2"
-          maxlength="40"
-          required
-        />
-        <span class="input-error input-name-error"></span>
-        <input
-          type="text"
-          class="form__input"
-          id="input-hobbie"
-          name="hobbie"
-          placeholder="Acerca de mí"
-          minlength="2"
-          maxlength="200"
-          required
-        />
-        <span class="input-error input-hobbie-error"></span>
-        <button type="submit" class="form__submit" disabled>Guardar</button>
-      </form>
-    </div>
-    <script src="./pages/index.js" type="module"></script>
+    <script type="module" src="./pages/index.js"></script>
   </body>
 </html>
+<footer class="footer">
+  <p class="footer__copyright">&#169; 2025 Diblik Mendizábal</p>
+</footer>

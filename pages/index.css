@@ -1,19 +1,14 @@
-@import url("../vendor/normalize.css");
-@import url("../fonts/inter.css");
-@import url("../blocks/footer.css");
-@import url("../blocks/header.css");
-@import url("../blocks/pages.css");
-@import url("../blocks/profile.css");
-@import url("../blocks/elements.css");
-@import url("../blocks/popup__profile.css");
-@import url("../blocks/popup__addCard.css");
-@import url("../blocks/popupCard.css");
-
-* {
-  margin: 0;
-}
-
-main {
-  background-color: black;
-  color: white;
-}
+@import url(../vendor/normalize.css);
+@import url(../vendor/font.css);
+@import url(../blocks/body.css);
+@import url(../blocks/content.css);
+@import url(../blocks/page.css);
+@import url(../blocks/header.css);
+@import url(../blocks/profile.css);
+@import url(../blocks/galery.css);
+@import url(../blocks/modal.css);
+@import url(../blocks/modalAdd.css);
+@import url(../blocks/hidden.css);
+@import url(../blocks/popupi.css);
+@import url(../blocks/formError.css);
+@import url(../blocks/media.css);

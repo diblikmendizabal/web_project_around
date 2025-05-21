@@ -1,24 +1,22 @@
 # Tripleten web_project_around
 
-El objetivo de este proyecto es implementar y optimizar la lógica de programación en JavaScript para gestionar dinámicamente tarjetas de contenido, permitiendo su creación, eliminación y la interacción con botones de like y dislike.
+Este proyecto tiene como objetivo implementar y optimizar la lógica de programación en **JavaScript** para gestionar dinámicamente tarjetas de contenido. Permite su creación, eliminación e interacción con botones de "like" y "dislike".
 
-En este proyecto, se adquirieron conocimientos sobre el manejo de Arrays para almacenar tarjetas, Funciones para modularizar el código y Manipulación del DOM para actualizar la interfaz de usuario en tiempo real.
+Durante el desarrollo se trabajó con conceptos fundamentales como:
+
+- Manejo de **Arrays** para almacenar y manipular tarjetas.
+- Uso de **Funciones** para organizar el código de forma modular.
+- **Manipulación del DOM** para actualizar la interfaz en tiempo real.
 
 ## Tecnologías utilizadas
 
-- **JavaScript** para la manipulación del DOM.
-- **@font-face** para agregar y gestionar fuentes personalizadas.
-- **Figma** para definir la tipografía y dimensiones del diseño.
-- **Media Queries** para implementar un diseño responsivo adaptable a diferentes dispositivos.
-- **GitHub** como plataforma para el control de versiones y alojamiento del código.
-- **CSS Grid Layout** para estructurar la interfaz.
-- **Sombreados y degradados en CSS** para mejorar el diseño visual.
-- **Arrays** para almacenar y gestionar las tarjetas de contenido.
-- **Funciones** para agregar, eliminar y dar like o dislike a las tarjetas.
-- **Manipulación del DOM** para actualizar la lista de tarjetas en tiempo real.
-- **Manejo de objetos en JS** para representar las tarjetas de contenido con sus propiedades.
-- **Manejo de eventos en JS** para validar todos los formularios.
-- **Programación Orientada a Objetos** para facilitar la organización y reutilización del cógido.
+- **JavaScript** — Manipulación del DOM y lógica de interacción.
+- **CSS Grid Layout** — Estructuración visual del contenido.
+- **Media Queries** — Diseño responsivo adaptable a diferentes dispositivos.
+- **@font-face** — Integración de fuentes personalizadas.
+- **Sombreados y degradados en CSS** — Mejora visual de la interfaz.
+- **Figma** — Referencia para tipografía y dimensiones del diseño.
+- **Git y GitHub** — Control de versiones y alojamiento del repositorio.
 
 ## Autor
 
