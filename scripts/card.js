@@ -1,8 +1,8 @@
 export class Card {
     constructor(item, templateId, handleCardClick) {
-        this._item = item = [];
-        this._templateId = document.getElementById(templateId).content;
-        this._handleCardClick = handleCardClick;
+        this._item = item = []; // es el array de objetos que se va a utilizar para crear las tarjetas
+        this._templateId = document.getElementById(templateId).content; // se obtiene el template del html
+        this._handleCardClick = handleCardClick; // se obtiene el popup de la imagen
     }
 
 
@@ -27,16 +27,15 @@ export class Card {
     addCard(item, index) {
         this._itemClone = this._templateId.cloneNode(true).firstElementChild;
         this._itemClone.querySelector('.galery__item-image').src = item.link;
-        this._itemClone.querySelector('.galery__item-image').alt = item.title;
-        this._itemClone.querySelector('.galery__item-name').textContent = item.title;
+        this._itemClone.querySelector('.galery__item-image').alt = item.name;
+        this._itemClone.querySelector('.galery__item-name').textContent = item.name;
 
         this._addLikeButton(this._itemClone);
         this._addDeleteButton(this._itemClone, index);
         this._itemClone.querySelector('.galery__item-image').addEventListener('click', () => {
-            this._handleCardClick(item.link, item.title);
+            this._handleCardClick(item.link, item.name);
         });
 
         return this._itemClone;
     }
 }
-
