@@ -59,6 +59,7 @@ api.getCards()
     .catch(err => console.error('Error al cargar las tarjetas:', err));
 
 const popupForm = new PopupWithForm('.modal__add', (data) => {
+    popupForm.setLoading(true, 'Creando...');
     const nombre = data.title;
     const image = data.link;
     const item = { name: nombre, link: image };
@@ -76,6 +77,9 @@ const popupForm = new PopupWithForm('.modal__add', (data) => {
             renderGalery.addItem(newitem);
         })
         .catch(err => console.error('Error al crear la tarjeta:', err))
+        .finally(() => {
+            popupForm.setLoading(false);
+        })
 }
 );
 
@@ -98,8 +102,12 @@ api.getUserInfo()
     });
 
 const popupEditForm = new PopupWithForm('.modal', ({ nombre, descripcion }) => {
+    popupEditForm.setLoading(true);
     userInfo.setUserInfo({ name: nombre, description: descripcion });
     api.changeUserInfo({ name: nombre, about: descripcion })
+        .finally(() => {
+            popupEditForm.setLoading(false);
+        })
 });
 
 popupEditForm.setEventListeners();
@@ -109,15 +117,21 @@ editButton.addEventListener('click', () => {
     document.querySelector('#nombre').value = name;
     document.querySelector('#descripcion').value = about;
     popupEditForm.open();
+
+
 });
 
 const popupModalImage = new PopupWithForm('.modal__image', (data) => {
     const avatarUrl = data.avatar
+    popupModalImage.setLoading(true);
     api.updateProfile({ avatar: avatarUrl })
         .then((user) => {
             document.querySelector('.profile__image').src = user.avatar;
         })
         .catch(err => console.error('Error al actualizar el avatar:', err))
+        .finally(() => {
+            popupModalImage.setLoading(false);
+        })
 });
 
 popupModalImage.setEventListeners();
