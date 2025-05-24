@@ -26,7 +26,6 @@ forms.forEach(form => {
     validator.enableValidation();
 });
 
-
 const popupimage = new PopupWithImage('.popupimg', (data) => {
     imageModal.src = data.src;
     imageModal.alt = data.alt;
@@ -74,7 +73,6 @@ const popupForm = new PopupWithForm('.modal__add', (data) => {
                     popupimage.open({ src: link, alt: name, caption: name })
                     popupimage.setEventListeners();
                 }).addCard(cardNew);
-
             renderGalery.addItem(newitem);
         })
         .catch(err => console.error('Error al crear la tarjeta:', err))
@@ -90,13 +88,14 @@ popupForm.setEventListeners();
 const userInfo = new UserInfo({
     nameSelector: '#name',
     descriptionSelector: '#description'
+    , avatarSelector: '.profile__image'
 });
 
 api.getUserInfo()
     .then(user => {
         userInfo.setUserInfo({ name: user.name, description: user.about });
+        userInfo.setAvatar(user.avatar);
     });
-
 
 const popupEditForm = new PopupWithForm('.modal', ({ nombre, descripcion }) => {
     userInfo.setUserInfo({ name: nombre, description: descripcion });
@@ -110,8 +109,6 @@ editButton.addEventListener('click', () => {
     document.querySelector('#nombre').value = name;
     document.querySelector('#descripcion').value = about;
     popupEditForm.open();
-
-
 });
 
 const popupModalImage = new PopupWithForm('.modal__image', (data) => {
