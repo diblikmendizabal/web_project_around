@@ -4,6 +4,7 @@ import { PopupWithForm } from '../scripts/PopupWithForm.js';
 import { PopupWithImage } from '../scripts/PopupWithImage.js';
 import { UserInfo } from '../scripts/UserInfo.js';
 import Section from '../scripts/Section.js';
+import Api from '../scripts/Api.js';
 import {
     galeryItems,
     editButton,
@@ -26,7 +27,7 @@ const popupimage = new PopupWithImage('.popupimg', (data) => {
 });
 
 const renderGalery = new Section({
-    items: galeryItems,
+    items: [],
     renderer: (item) => {
         const card = new Card(
             item,
@@ -35,12 +36,32 @@ const renderGalery = new Section({
                 popupimage.open({ src: link, alt: name, caption: name })
                 popupimage.setEventListeners();
             })
+
         return card.addCard(item);
     }
 }, '#galery__content'
 );
 
+
 renderGalery.rendererItems();
+
+fetch('https://around-api.es.tripleten-services.com/v1/cards/', {
+    method: 'GET',
+    headers: {
+        "content-type": "application/json; charset=UTF-8",
+        authorization: '838f9adb-9e40-4b54-8266-23d124ff4365'
+
+    },
+})
+    .then(res => {
+        if (!res.ok) throw new Error(`Error: ${res.status}`);
+        return res.json();
+    })
+    .then(cards => {
+        renderGalery._items = cards;
+        renderGalery.rendererItems();
+    })
+    .catch(err => console.error('Error al cargar las tarjetas:', err));
 
 const popupForm = new PopupWithForm('.modal__add', (data) => {
     const nombre = data.title;
@@ -81,4 +102,16 @@ editButton.addEventListener('click', () => {
     document.querySelector('#nombre').value = name;
     document.querySelector('#descripcion').value = about;
     popupEditForm.open();
+
+
 });
+
+fetch('https://around-api.es.tripleten-services.com/v1/', {
+    method: 'GET',
+    headers: {
+        authorization: "287b256e-914c-4df1-a505-e027a285fad7"
+    }
+}
+)
+    .then(res => res.json())
+    .then(data => console.log(data))
