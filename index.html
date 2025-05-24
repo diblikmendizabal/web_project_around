@@ -15,175 +15,96 @@
   </head>
   <body>
     <div class="page">
-      <header class="header">
-        <h1 class="header__title header__title_word">
-          <img src="./image/header.svg" alt="" />
-        </h1>
-      </header>
-      <main class="content">
-        <section class="profile">
-          <div class="profile__image-container">
-            <img
-              src=""
-              alt="profile of a men"
-              class="profile__image"
-              role="button"
-              tabindex="0"
-              aria-label="Editar imagen de perfil"
-            />
-            <img
-              src="./image/pencil_img.svg"
-              alt="pencil"
-              class="profile__image-pencil"
-            />
-          </div>
-          <div class="profile__info">
-            <ul class="profile__info-list">
-              <li><h1 class="profile__info-name" id="name"></h1></li>
-              <li>
-                <p class="profile__info-description" id="description"></p>
-              </li>
-            </ul>
-            <button class="profile__edit-button" type="button">.</button>
-          </div>
-          <button class="profile__add-button" type="button">.</button>
-        </section>
-        <div class="modal__image hidden">
-          <div class="modal__image-content">
-            <button
-              class="modal__image-close popup__close"
-              type="button"
-            ></button>
-            <h2 class="modal__image-header">Cambiar foto de perfil</h2>
-            <form class="modal__image-form form" novalidate>
-              <input
-                type="url"
-                id="avatar"
-                name="avatar"
-                placeholder="Inagresa URL"
-                class="modal__image_url modal__input"
-                required
-              />
-              <span class="avatar-error modal__error"></span>
-              <button type="submit" class="modal__image_button form__submit">
-                Guardar
-              </button>
-            </form>
-          </div>
-        </div>
-        <div id="modal-edit-all">
-          <div class="modal hidden">
-            <div class="modal__content">
-              <button class="close popup__close" type="button"></button>
-              <h2 class="modal__content_header">Editar perfil</h2>
-              <form class="modal__form form" novalidate>
-                <input
-                  type="text"
-                  id="nombre"
-                  name="nombre"
-                  placeholder="Nombre"
-                  class="modal__form_name modal__input"
-                  minlength="2"
-                  maxlength="40"
-                  required
-                />
-                <span class="nombre-error modal__error"></span>
-                <input
-                  type="text"
-                  id="descripcion"
-                  name="descripcion"
-                  placeholder="Acerca de mí"
-                  class="modal__form_description modal__input"
-                  minlength="2"
-                  maxlength="200"
-                  required
-                />
-                <span class="descripcion-error modal__error"></span>
-                <button
-                  type="submit"
-                  class="modal__content_button form__submit"
-                >
-                  Guardar
-                </button>
-              </form>
+        <header class="header">
+            <h1 class="header__title header__title_word"><img src="./image/header.svg" alt=""></h1>
+        </header>
+        <main class="content">
+            <section class="profile">
+                <div class="profile__image-container"  > 
+                    <img src="./image/profile.jpg" alt="profile of a men" class="profile__image" role="button" tabindex="0" aria-label="Editar imagen de perfil">
+                    <img src="./image/pencil_img.svg" alt="pencil" class="profile__image-pencil"/>
+                </div>
+                <div class="profile__info">
+                <ul class="profile__info-list">
+                    <li><h1 class="profile__info-name" id="name"></h1></li>
+                    <li><p class="profile__info-description" id="description"></p></li>
+                </ul>
+                <button class="profile__edit-button" type="button">.</button>
+                </div>
+                <button class="profile__add-button" type="button">.</button>
+            </section>
+                <div class="modal__image hidden">
+                    <div class="modal__image-content">
+                        <button class="modal__image-close popup__close" type="button"></button>
+                        <h2 class="modal__image-header">Cambiar foto de perfil</h2>
+                        <form class="modal__image-form form" novalidate>
+                            <input type="url" id="avatar"  name="avatar" placeholder="Inagresa URL" class="modal__image_url modal__input" required>
+                            <span class="avatar-error modal__error"></span>
+                            <button type="submit" class="modal__image_button form__submit">Guardar</button>               
+                        </form>
+                    </div>
+                </div>
+                <div id="modal-edit-all">
+                    <div class="modal hidden">
+                        <div class="modal__content ">
+                            <button class="close popup__close" type="button"></button>
+                            <h2 class="modal__content_header">Editar perfil</h2>
+                            <form class="modal__form form" novalidate>
+                                <input type="text" id="nombre"  name="nombre" placeholder="Nombre" class="modal__form_name modal__input" minlength="2" maxlength="40" required>
+                                <span class="nombre-error modal__error"></span>
+                                <input type="text" id="descripcion" name="descripcion" placeholder="Acerca de mí" class="modal__form_description modal__input" minlength="2" maxlength="200" required>
+                                <span class="descripcion-error modal__error"></span>
+                                <button type="submit" class="modal__content_button form__submit">Guardar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            <div id="modal__add-all" class="modal__add-all">
+                <div class="modal__add hidden modal">       
+                    <div class="modal__add-content">
+                        <button class="close__add popup__close" type="button"></button>
+                        <h2 class="modal__add-content-header">Nuevo Lugar</h2>
+                        <form class="modal__add-form form" novalidate>
+                            <input type="text" id="nombreAdd" name='title' placeholder="Titulo" class="modal__add-form-name modal__input " minlength="2" maxlength="30" required>
+                            <span class="nombreAdd-error modal__error"></span>
+                            <input type="url" id="imageAdd" name="link" placeholder="Enlace a la imagen" class="modal__add-form-description modal__input" required>
+                            <span class="imageAdd-error modal__error"></span>
+                            <button type="submit" class="modal__add-content-button form__submit">Crear</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div id="modal__add-all" class="modal__add-all">
-          <div class="modal__add hidden modal">
-            <div class="modal__add-content">
-              <button class="close__add popup__close" type="button"></button>
-              <h2 class="modal__add-content-header">Nuevo Lugar</h2>
-              <form class="modal__add-form form" novalidate>
-                <input
-                  type="text"
-                  id="nombreAdd"
-                  name="title"
-                  placeholder="Titulo"
-                  class="modal__add-form-name modal__input"
-                  minlength="2"
-                  maxlength="30"
-                  required
-                />
-                <span class="nombreAdd-error modal__error"></span>
-                <input
-                  type="url"
-                  id="imageAdd"
-                  name="link"
-                  placeholder="Enlace a la imagen"
-                  class="modal__add-form-description modal__input"
-                  required
-                />
-                <span class="imageAdd-error modal__error"></span>
-                <button
-                  type="submit"
-                  class="modal__add-content-button form__submit"
-                >
-                  Crear
-                </button>
-              </form>
+            <div id="modal__delete-card" class="modal__delete-card">
+                <div class="delete-card hidden modal">
+                    <div class="delete-card__content">
+                        <button class="close__delete popup__close" type="button"></button>
+                        <h2 class="delete-card__content-header">¿Estás seguro?</h2>
+                        <p class="delete-card__content-text">¿Realmente deseas eliminar esta tarjeta?</p>
+                        <button type="submit" class="delete-card__content-button form__submit">Sí</button>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div id="modal__delete-card" class="modal__delete-card">
-          <div class="delete-card hidden modal">
-            <div class="delete-card__content">
-              <button class="close__delete popup__close" type="button"></button>
-              <h2 class="delete-card__content-header">¿Estás seguro?</h2>
-              <p class="delete-card__content-text">
-                ¿Realmente deseas eliminar esta tarjeta?
-              </p>
-              <button
-                type="submit"
-                class="delete-card__content-button form__submit"
-              >
-                Sí
-              </button>
+            <template id="galery">
+                <div class="galery__item">
+                    <img src="" alt="landscape image" class="galery__item-image">
+                    <button class="galery__item-delete-button"></button>
+                    <div class="galery__item-content">
+                    <p class="galery__item-name">   </p>
+                    <button class="galery__item-like-button"></button>
+                    </div>
+                </div>
+            </template>
+            <div id="galery__content"></div>
+            <div id="popupimg" class="popupimg hidden">
+                <div class="popupimg__content">
+                    <button class="popupimg__content-close popup__close"></button>
+                    <img src="" alt="imagen ampliada" class="popupimg__content-image">
+                    <p class="popupimg__content-title"></p>
+                </div>
             </div>
-          </div>
-        </div>
-        <template id="galery">
-          <div class="galery__item">
-            <img src="" alt="landscape image" class="galery__item-image" />
-            <button class="galery__item-delete-button"></button>
-            <div class="galery__item-content">
-              <p class="galery__item-name"></p>
-              <button class="galery__item-like-button"></button>
-            </div>
-          </div>
-        </template>
-        <div id="galery__content"></div>
-        <div id="popupimg" class="popupimg hidden">
-          <div class="popupimg__content">
-            <button class="popupimg__content-close popup__close"></button>
-            <img src="" alt="imagen ampliada" class="popupimg__content-image" />
-            <p class="popupimg__content-title"></p>
-          </div>
-        </div>
-      </main>
+        </main>
     </div>
     <script type="module" src="./pages/index.js"></script>
-  </body>
 </html>
 <footer class="footer">
   <p class="footer__copyright">&#169; 2025 Diblik Mendizábal</p>
