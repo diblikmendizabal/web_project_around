@@ -5,8 +5,8 @@ import Popup from "./Popup.js";
 export class Card {
     constructor(data, templateId, handleCardClick) {
         this._item = data;
-        this._templateId = document.getElementById(templateId).content;
-        this._handleCardClick = handleCardClick;
+        this._templateId = document.getElementById(templateId).content; // se obtiene el template del html
+        this._handleCardClick = handleCardClick; // se obtiene el popup de la imagen
     }
 
 
@@ -76,3 +76,4 @@ export class Card {
         return this._itemClone;
     }
 }
+

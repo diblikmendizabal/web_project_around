@@ -1,21 +1,22 @@
-import { Card } from '../scripts/Card.js';
-import { FormValidator } from '../scripts/formValidator.js';
-import { PopupWithForm } from '../scripts/PopupWithForm.js';
-import { PopupWithImage } from '../scripts/PopupWithImage.js';
-import { UserInfo } from '../scripts/UserInfo.js';
-import Section from '../scripts/Section.js';
-import Api from '../scripts/Api.js';
+import { Card } from '../components/card.js';
+import { FormValidator } from '../components/formValidator.js';
+import { PopupWithForm } from '../components/PopupWithForm.js';
+import { PopupWithImage } from '../components/PopupWithImage.js';
+import { UserInfo } from '../components/UserInfo.js';
+import Section from '../components/Section.js';
+import Api from '../utils/Api.js';
 import {
     editButton,
     addButton,
     imageModal,
     titleImageModal,
+    imageButton
 } from '../constants/constants.js';
 
-const api = new Api({
+export const api = new Api({
     baseUrl: 'https://around-api.es.tripleten-services.com/v1',
     headers: {
-        "content-type": "application/json; charset=UTF-8",
+        "content-type": 'application/json; charset=UTF-8',
         authorization: '287b256e-914c-4df1-a505-e027a285fad7'
     }
 });
@@ -25,6 +26,7 @@ forms.forEach(form => {
     const validator = new FormValidator(`.${form.classList[0]}`);
     validator.enableValidation();
 });
+
 
 const popupimage = new PopupWithImage('.popupimg', (data) => {
     imageModal.src = data.src;
@@ -74,6 +76,7 @@ const popupForm = new PopupWithForm('.modal__add', (data) => {
                     popupimage.open({ src: link, alt: name, caption: name })
                     popupimage.setEventListeners();
                 }).addCard(cardNew);
+
             renderGalery.addItem(newitem);
         })
         .catch(err => console.error('Error al crear la tarjeta:', err))
