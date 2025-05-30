@@ -1,6 +1,0 @@
-.hidden {
-    opacity: 0;
-    display: none;
-    pointer-events: none;
-    transition: opacity 0.3s ease-in-out;
-}
