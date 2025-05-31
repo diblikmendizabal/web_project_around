@@ -5,7 +5,7 @@ import { PopupWithConfirmation } from "../scripts/PopupWithConfirmation.js";
 import { Section } from "../scripts/Section.js";
 import { UserInfo } from "../scripts/UserInfo.js";
 import { FormValidator } from "../scripts/FormValidator.js";
-import { api } from "../utils/api.js";
+import { api } from "../utils/Api.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const popupProfile = document.querySelector("#popup-profile");
